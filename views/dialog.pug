@@ -1,0 +1,13 @@
+p
+	|	Hi 
+	= user.name
+br
+p
+	b= client.name
+	| is requesting access to your account.
+p Do you approve?
+
+form(action="/dialog/authorize/decision", method="post")
+	input(name="transaction_id", type="hidden", value=transactionID)
+	input(type="submit", value="Allow", id="allow")
+	input(type="submit", value="Deny", id="deny", name="cancel")
